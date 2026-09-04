@@ -1,0 +1,33 @@
+name: Ubuntu checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install desktop test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-venv python3-gi gir1.2-gtk-3.0 autokey-gtk xdotool desktop-file-utils xvfb xauth libegl1 libgl1 libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
+          /usr/bin/python3 -m venv .venv
+          .venv/bin/python -m pip install -r apps/notes/requirements.lock
+      - name: Check installers and transfer
+        run: |
+          bash -n install.sh
+          ./install.sh --dry-run
+          /usr/bin/python3 -m unittest discover -s tests -v
+          .venv/bin/python tests/check_install.py
+      - name: Check Snippets
+        run: |
+          /usr/bin/python3 -m unittest discover -s apps/snippets/tests -v
+          xvfb-run -a -s '-screen 0 1440x1000x24' /usr/bin/python3 apps/snippets/tests/check_ui.py
+      - name: Check Notes
+        run: |
+          .venv/bin/python apps/notes/tests/check_app.py
+          .venv/bin/python apps/notes/tests/check_markdown.py

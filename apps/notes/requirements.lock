@@ -1,0 +1,3 @@
+# Versions used by the shared installer and CI. Transitive Qt packages pin to 6.11.0.
+PySide6==6.11.0
+Pygments==2.19.2
