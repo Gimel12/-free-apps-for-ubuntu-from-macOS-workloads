@@ -31,3 +31,13 @@ jobs:
         run: |
           .venv/bin/python apps/notes/tests/check_app.py
           .venv/bin/python apps/notes/tests/check_markdown.py
+      - name: Check optional apps and GNOME extensions
+        run: |
+          /usr/bin/python3 -m compileall -q apps/z13-fan-control apps/desktop-actions desktop
+          /usr/bin/python3 apps/z13-fan-control/install.py --dry-run
+          /usr/bin/python3 apps/desktop-actions/install.py --dry-run
+          /usr/bin/python3 desktop/install.py --z13-controls --workspace-shortcuts --dry-run
+          /usr/bin/python3 -m unittest discover -s apps/z13-fan-control -p 'test_*.py' -v
+          for extension in desktop/extensions/*/extension.js; do
+            node --input-type=module --check < "$extension"
+          done

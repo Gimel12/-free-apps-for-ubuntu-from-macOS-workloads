@@ -1,0 +1,11 @@
+[Unit]
+Description=Manual gaming performance mode
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/powerprofilesctl launch --profile performance --reason "Game Mode toggle is on" --appid com.bizon.GameMode -- /usr/bin/gamemoded -r
+KillMode=control-group
+TimeoutStopSec=5
+Restart=no

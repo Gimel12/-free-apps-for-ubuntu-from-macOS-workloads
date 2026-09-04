@@ -1,0 +1,7 @@
+{
+  "uuid": "screen-keyboard@local",
+  "name": "Screen Keyboard Toggle",
+  "description": "An easy on-screen keyboard switch in Quick Settings.",
+  "shell-version": ["46"],
+  "version": 1
+}

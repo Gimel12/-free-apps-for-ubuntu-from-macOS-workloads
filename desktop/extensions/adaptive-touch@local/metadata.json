@@ -1,0 +1,7 @@
+{
+  "uuid": "adaptive-touch@local",
+  "name": "Adaptive Touch Controls",
+  "description": "Switch between finger and mouse interaction automatically, with a touch keyboard and larger Quick Settings controls.",
+  "shell-version": ["46"],
+  "version": 1
+}

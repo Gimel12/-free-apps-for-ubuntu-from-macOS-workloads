@@ -1,0 +1,7 @@
+{
+  "uuid": "fan-control@local",
+  "name": "ASUS Fan Control",
+  "description": "Fan speed slider and live RPM in Quick Settings, with automatic cooling and a thermal ramp.",
+  "shell-version": ["46"],
+  "version": 1
+}

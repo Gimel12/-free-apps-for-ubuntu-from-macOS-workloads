@@ -1,0 +1,7 @@
+{
+  "uuid": "game-mode-toggle@local",
+  "name": "Game Mode Toggle",
+  "description": "A Quick Settings switch for GameMode and the Performance power profile.",
+  "shell-version": ["46"],
+  "version": 1
+}

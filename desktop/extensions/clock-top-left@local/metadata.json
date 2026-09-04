@@ -1,0 +1,9 @@
+{
+  "uuid": "clock-top-left@local",
+  "name": "Clock at Top Left",
+  "description": "Move the existing clock and calendar to the left side of the top bar.",
+  "shell-version": [
+    "46"
+  ],
+  "version": 1
+}

@@ -48,3 +48,15 @@ Remove an app's launcher, desktop entry, and installed code. Keep the database f
 - Notes code/runtime: `~/.local/share/blue-notes/app/` and `~/.local/share/blue-notes/venv/`; launcher `~/.local/bin/notes`; desktop entry `~/.local/share/applications/com.bizon.Notes.desktop`.
 - Snippets code: `~/.local/share/bizon-snippets/`; launcher `~/.local/bin/bizon-snippets`; desktop entry `~/.local/share/applications/com.bizon.Snippets.desktop`.
 - To remove Snippets keyboard integration, quit AutoKey, remove its generated **Bizon Snippet Expansions** folder and **Clipboard Shortcuts / Snippet Picker** script and metadata, then remove `~/.config/autostart/bizon-snippets-autokey.desktop` if present. Keep unrelated AutoKey shortcuts.
+
+## Fan profiles and desktop controls
+
+The existing `scripts/transfer.py` archive covers Notes and Snippets only. To move
+Z13 Fan Control profiles, close the fan app and privately copy
+`~/.config/z13-fan-control/profiles.json` to the same location on the compatible
+new Z13 after installing the app. Back up an existing destination file first.
+Profiles are validated on load and do not activate automatically.
+
+Reinstall Desktop Actions and the optional GNOME controls using their installers.
+Do not copy `/run/bizon-quiet-mode` or root recovery state between machines.
+Ulauncher personal shortcuts and desktop settings are not included in this repo.

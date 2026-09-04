@@ -1,0 +1,17 @@
+.adaptive-touch-controls .quick-toggle {
+    min-height: 56px;
+}
+.adaptive-touch-controls .quick-slider .icon-button {
+    min-width: 32px;
+    min-height: 32px;
+}
+.adaptive-touch-ripple {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    border: 2px solid rgba(120, 190, 255, 0.8);
+    background-color: rgba(220, 240, 255, 0.12);
+}
+.adaptive-window-grip { background-color: transparent; padding: 0; }
+.adaptive-window-grip-line { width: 64px; height: 5px; border-radius: 4px; background-color: #58a6ff; border: 1px solid rgba(255,255,255,0.85); }
+.adaptive-window-grip:active .adaptive-window-grip-line { background-color: #b9dcff; }
